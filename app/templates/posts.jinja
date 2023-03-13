@@ -1,0 +1,21 @@
+{% extends "base.jinja" %}
+
+{%block content%}
+<h2>Posts</h2>
+ <form action=" " method="post">
+    {{ postform.hidden_tag() }}
+    <p>
+    {{ postform.heading.label }} <br>
+    {{ postform.heading(size=32) }}
+    </p>
+
+    <p></p>
+    {{ postform.body.label }} <br>
+    {{ postform.body(size=32) }}
+
+    <p></p>
+    {{postform.submit(class='btn btn-primary') }}
+
+    </form>
+
+{%endblock%}

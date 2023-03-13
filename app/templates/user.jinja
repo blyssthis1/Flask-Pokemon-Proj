@@ -1,0 +1,87 @@
+{# {% extends "base.jinja" %}
+
+{%block content %}
+<h2> Pokemon Master {{ user.username.title() }}'s Profile!</h2>
+
+ {% for poke in pokemons %}
+    <p>{{ user.username }} caught: {{ poke.pokemon_name }}!</p>
+   {% if poke.apiid %}
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/{{ poke.apiid }}.png">
+
+{%endif%}
+{% endfor %}
+
+{% endblock %} #}
+
+
+{% extends "base.jinja" %}
+
+{% block content %}
+<h2>Welcome to {{ user.username }}'s Collection</h2>
+
+{% for p in pokemons %}
+    <p>{{ user.username }} has:</p>
+    <div class="card" style="width: 18rem;">
+  <img src='{{ p.sprite }}' class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ p.pokemon_name }}</h5>
+    <p class="card-text"> {{ p.id }}</p>
+    <p class="card-text"> {{p.ability}}</p>
+    <p class="card-text">{{p.type}}</p>
+    <form>
+    <button class="btn btn-primary">Remove this Pokemon</button>
+    <input type="hidden" name="id" value="{{ p.id }}">
+    </form>
+  </div>
+</div>
+    {# <p>{{ post.author.username }} says: {{ post.body }}</p> #}
+
+{% endfor %} 
+{% endblock %}
+
+
+
+
+
+
+{# {% for post in find_pokemon %}
+    
+    <p> {{ user.username.title() }} has: {{pokemon_name}}</p>
+    <img src="" alt="">
+
+{% endfor %} #}
+
+
+
+{# {% extends "base.jinja" %}
+
+{% block content %}
+<h2>{{ user.username  }} Your Pokemon</h2>
+
+
+
+{% endblock %} #}
+
+{# <div class="card" style="width: 18rem;"> #}
+  {# <img src="..." class="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/%7Bpokemon.id%7D.png" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">pokemon name</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Pick this pokemon</a>
+  </div> #}
+
+
+
+
+  {# {%block content %}
+<h2> Pokemon Master {{ user.username.title() }}'s Profile!</h2>
+
+ {% for poke in pokemons %}
+    <p>{{ user.username }} caught: {{ poke.pokemon_name }}!</p>
+   {% if poke.apiid %}
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/{{ poke.apiid }}.png">
+
+{%endif%}
+{% endfor %}
+
+{% endblock %} #}

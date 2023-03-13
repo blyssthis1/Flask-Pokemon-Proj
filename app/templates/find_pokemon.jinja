@@ -1,0 +1,22 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+    <h2>Find a Pokemon!</h2>
+
+ 
+<form action="" method="POST">
+    {{  form.hidden_tag() }}
+    <p>
+    {{ form.pokemon_name.label  }}<br>
+    {{ form.pokemon_name(size=32)  }}
+
+    <p> {{form.submit(class='btn btn-primary') }}</p>
+
+    {% for error in form.pokemon_name.errors %}
+    <span>{{ error }}</span>
+    
+    {%  endfor %}
+    </p>
+
+
+{% endblock %}
